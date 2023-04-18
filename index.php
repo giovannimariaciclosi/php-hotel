@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,72 +56,45 @@
 
   ?>
 
-  <h1>Hotel</h1>
+  <h1>Hotels</h1>
 
-  <!-- <?php 
-    foreach($hotels as $hotelClass) {
-      foreach($hotelClass as $key => $value) {
-        // echo $key . ": " . $value . "<br>";
-        echo "{$key}: {$value} <br>";
-      }
-    }
-  ?> -->
 
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <?php 
-          foreach($hotels[0] as $key => $value) {
-              echo "<th scope='col'>{$key}</th>";
-          }
-        ?>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrizione</th>
+        <th scope="col">Parcheggio</th>
+        <th scope="col">Voto</th>
+        <th scope="col">Distanza dal centro</th>
       </tr>
     </thead>
     <tbody>
+    <?php
+      foreach ($hotels as $hotel) {
+    ?>
       <tr>
-        <th scope="row">1</th>
-        <?php 
-          foreach($hotels[0] as $key => $value) {
-              echo "<td>{$value}</td>";
-          }
-        ?>
+        <td>
+            <?php echo $hotel["name"] ?>
+        </td>
+        <td>
+            <?php echo $hotel["description"] ?>
+        </td>
+        <td>
+            <?php echo $hotel['parking'] ? 'Si' : 'No' ?>
+        </td>
+        <td>
+            <?php echo $hotel["vote"] ?> / 5
+        </td>
+        <td>
+            <?php echo $hotel["distance_to_center"] ?> km
+        </td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <?php 
-          foreach($hotels[1] as $key => $value) {
-              echo "<td>{$value}</td>";
-          }
-        ?>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <?php 
-          foreach($hotels[2] as $key => $value) {
-              echo "<td>{$value}</td>";
-          }
-        ?>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <?php 
-          foreach($hotels[3] as $key => $value) {
-              echo "<td>{$value}</td>";
-          }
-        ?>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <?php 
-          foreach($hotels[4] as $key => $value) {
-              echo "<td>{$value}</td>";
-          }
-        ?>
-      </tr>
+    <?php
+      }
+    ?>
     </tbody>
   </table>
-
 
 
    <!-- Bootstrap -->
