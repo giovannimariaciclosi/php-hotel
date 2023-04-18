@@ -94,6 +94,11 @@
         foreach ($hotels as $hotel) {
       ?>
         <tr>
+
+        <!-- <?php 
+        if($parcheggio != "" && $hotel["parking"] == "Si") 
+        ?> -->
+        
           <td>
               <?php echo $hotel["name"] ?>
           </td>
@@ -101,7 +106,7 @@
               <?php echo $hotel["description"] ?>
           </td>
           <td>
-              <?php echo $hotel['parking'] ? 'Si' : 'No' ?>
+              <?php echo $hotel["parking"] ? "Si" : "No" ?>
           </td>
           <td>
               <?php echo $hotel["vote"] ?> / 5
