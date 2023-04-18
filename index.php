@@ -58,13 +58,69 @@
 
   <h1>Hotel</h1>
 
-  <?php 
+  <!-- <?php 
     foreach($hotels as $hotelClass) {
-      foreach($hotelClass as $hotel) {
-        echo $hotel . "<br>";
+      foreach($hotelClass as $key => $value) {
+        // echo $key . ": " . $value . "<br>";
+        echo "{$key}: {$value} <br>";
       }
     }
-  ?>
+  ?> -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <?php 
+          foreach($hotels[0] as $key => $value) {
+              echo "<th scope='col'>{$key}</th>";
+          }
+        ?>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <?php 
+          foreach($hotels[0] as $key => $value) {
+              echo "<td>{$value}</td>";
+          }
+        ?>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <?php 
+          foreach($hotels[1] as $key => $value) {
+              echo "<td>{$value}</td>";
+          }
+        ?>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <?php 
+          foreach($hotels[2] as $key => $value) {
+              echo "<td>{$value}</td>";
+          }
+        ?>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <?php 
+          foreach($hotels[3] as $key => $value) {
+              echo "<td>{$value}</td>";
+          }
+        ?>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <?php 
+          foreach($hotels[4] as $key => $value) {
+              echo "<td>{$value}</td>";
+          }
+        ?>
+      </tr>
+    </tbody>
+  </table>
 
 
 
